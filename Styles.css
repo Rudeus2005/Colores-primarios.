@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  font-family: "Poppins", "Comic Sans MS", sans-serif;
+  color: #222;
+  background: linear-gradient(180deg, #ffd966, #ff9999, #99ccff);
+  min-height: 100vh;
+}
+
+/* Encabezado */
+.hero {
+  text-align: center;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(90deg, #ff4d4d, #ffcc00, #3385ff);
+}
+.hero h1 { font-size: 2em; margin: 0; }
+.subtitle { margin-top: 5px; font-weight: 600; }
+
+nav { margin-top: 10px; }
+.tab {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  background: #fff3;
+  color: white;
+  margin: 5px;
+}
+.tab.active { background: white; color: #333; }
+
+/* Paneles */
+.panel { display: none; padding: 20px; background: #fff9; margin: 20px; border-radius: 16px; }
+.panel.active { display: block; }
+
+ul { text-align: left; }
+
+iframe {
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* Sección niños */
+.colores {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+.color {
+  padding: 15px 25px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1em;
+  color: white;
+  font-weight: bold;
+}
+.rojo { background: linear-gradient(135deg, #ff4d4d, #cc0000); }
+.azul { background: linear-gradient(135deg, #3385ff, #0055cc); }
+.amarillo { background: linear-gradient(135deg, #ffcc00, #e6b800); color: #333; }
+
+.resultado {
+  text-align: center;
+  font-size: 1.2em;
+  padding: 10px;
+  background: #fff7;
+  border-radius: 12px;
+  }
