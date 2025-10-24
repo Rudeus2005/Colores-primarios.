@@ -1,1 +1,80 @@
 index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Los Colores Primarios</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>🎨 Los Colores Primarios</h1>
+    <p class="subtitle">Aprendemos jugando y creando con rojo, azul y amarillo</p>
+    <nav>
+      <button class="tab active" id="adultosBtn">👩‍🏫 Adultos</button>
+      <button class="tab" id="ninosBtn">🧒 Niños</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="adultos" class="panel active">
+      <h2>Sección para Adultos</h2>
+      <p>Guía y fundamentos para aplicar las 5 clases sobre los colores primarios.</p>
+      <h3>Objetivos</h3>
+      <ul>
+        <li>Reconocer los colores rojo, azul y amarillo.</li>
+        <li>Explorar colores a través del arte y el juego.</li>
+        <li>Identificar colores en el entorno.</li>
+      </ul>
+      <h3>Video sugerido</h3>
+      <iframe width="100%" height="250" src="https://www.youtube.com/embed/Ws2zVXQCcJo" allowfullscreen></iframe>
+    </section>
+
+    <section id="ninos" class="panel">
+      <h2>¡Hola! Vamos a jugar con los colores</h2>
+      <p>Tocá los botones y descubrí objetos de ese color:</p>
+      <div class="colores">
+        <button class="color rojo">Rojo</button>
+        <button class="color azul">Azul</button>
+        <button class="color amarillo">Amarillo</button>
+      </div>
+      <div id="resultado" class="resultado">Tocá un color para empezar</div>
+    </section>
+  </main>
+
+  <script>
+    const adultosBtn = document.getElementById('adultosBtn');
+    const ninosBtn = document.getElementById('ninosBtn');
+    const adultos = document.getElementById('adultos');
+    const ninos = document.getElementById('ninos');
+    const resultado = document.getElementById('resultado');
+
+    adultosBtn.onclick = () => {
+      adultos.classList.add('active');
+      ninos.classList.remove('active');
+      adultosBtn.classList.add('active');
+      ninosBtn.classList.remove('active');
+    };
+
+    ninosBtn.onclick = () => {
+      ninos.classList.add('active');
+      adultos.classList.remove('active');
+      ninosBtn.classList.add('active');
+      adultosBtn.classList.remove('active');
+    };
+
+    document.querySelectorAll('.color').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const color = btn.textContent.trim().toLowerCase();
+        const ejemplos = {
+          rojo: ['🍎 manzana', '🚗 auto', '🌹 flor'],
+          azul: ['🌊 mar', '🧢 gorra', '🐟 pez'],
+          amarillo: ['🌞 sol', '🍌 banana', '🐥 pollito']
+        };
+        resultado.innerHTML = `Cosas de color <b>${color}</b>: ${ejemplos[color].join(', ')}`;
+      });
+    });
+  </script>
+</body>
+</html>
